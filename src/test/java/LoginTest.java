@@ -50,7 +50,9 @@ public class LoginTest {
         assertNotEquals( correctUrl, returnedUrl);
 
     }
-
+    /**
+     * Check login with correct password no email
+     */
     @Test
     public void wrongEmailAndPasswordLoginTest(){
 
@@ -59,6 +61,10 @@ public class LoginTest {
         assertNotEquals( correctUrl, returnedUrl);
 
     }
+
+    /**
+     * Check login with correct password no email
+     */
 
     @Test
     public void missingEmailLoginTest(){
@@ -69,6 +75,10 @@ public class LoginTest {
 
     }
 
+    /**
+     * Check login with correct email no password
+     */
+
     @Test
     public void missingPasswordLoginTest(){
 
@@ -78,6 +88,9 @@ public class LoginTest {
 
     }
 
+    /**
+     * check login with correct params
+     */
     @Test
     public void correctLoginTest(){
 

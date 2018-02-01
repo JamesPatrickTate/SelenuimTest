@@ -16,16 +16,20 @@ public class ShotsComponent {
         this.driver = driver;
         loginPage = new LoginPage(driver);
         loginPage.correctLogin();
-        clubInput.findElement(By.className("input"));
-        shotInfoClub.findElement(By.className("clubName"));
-        inputValue = "6";
+        WebDriverWait wait = new WebDriverWait(driver, 4);
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("input")));
+        clubInput = driver.findElement(By.className("input"));
+
+
+
     }
 
     public String searchShots() {
         clubInput.sendKeys("6");
-        driver.findElement(By.id("elementid")).sendKeys(Keys.ENTER);
+        driver.findElement(By.className("input")).sendKeys(Keys.ENTER);
         WebDriverWait wait = new WebDriverWait(driver, 7);
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("clubName")));
+        shotInfoClub = driver.findElement(By.className("clubName"));
         clubValue = shotInfoClub.getText();
         System.out.println("club value "+ clubValue);
         return clubValue;

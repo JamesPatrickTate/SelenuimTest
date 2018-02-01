@@ -33,6 +33,9 @@ public class NavBarComponentTest {
         driver.quit();
     }
 
+    /**
+     * check nav button for messages opens message board
+     */
     @Test
     public void messageButtonTest() {
         navBarComponent = new NavBarComponent(driver);
@@ -41,6 +44,9 @@ public class NavBarComponentTest {
         //navBarComponent.logoutButton();
     }
 
+    /**
+     * check nav button for shots opens dashboard
+     */
     @Test
     public void shotButtonTest() {
         navBarComponent = new NavBarComponent(driver);
@@ -48,6 +54,10 @@ public class NavBarComponentTest {
         assertEquals(shotUrl, returnedUrl);
         // navBarComponent.logoutButton();
     }
+
+    /**
+     * check nav button for stats opens stats
+     */
     @Test
     public void statButtonTest() {
         navBarComponent = new NavBarComponent(driver);
@@ -55,6 +65,10 @@ public class NavBarComponentTest {
         assertEquals(statUrl, returnedUrl);
        // navBarComponent.logoutButton();
     }
+
+    /**
+     * check log out, actually logs out
+     */
 
     @Test
     public void LogOutButtonTest() {

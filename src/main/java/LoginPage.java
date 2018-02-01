@@ -13,6 +13,8 @@ public class LoginPage {
     private WebDriver driver;
     private String baseURL;
     private WebElement email, password, loginButton;
+    private final String EMAIL = "jamestate11@gmail.com";
+    private final String PASSWORD = "Keelagh46=";
 
     public LoginPage(WebDriver driver) {
 
@@ -20,6 +22,8 @@ public class LoginPage {
         this.driver = driver;
         baseURL = "http://localhost:4200/login";
         driver.get(baseURL);
+
+
 
         WebDriverWait wait = new WebDriverWait(driver, 15);
 
@@ -38,8 +42,8 @@ public class LoginPage {
     public String correctLogin(){
 
         String urlOfpage = " ";
-        email.sendKeys("jamestate11@gmail.com");
-        password.sendKeys("Keelagh46=");
+        email.sendKeys(EMAIL);
+        password.sendKeys(PASSWORD);
         loginButton.click();
         WebDriverWait wait = new WebDriverWait(driver, 5);
         wait.until(ExpectedConditions.textToBePresentInElement(By.id("userEmail"), "Hello, jamestate11@gmail.com"));
@@ -64,7 +68,7 @@ public class LoginPage {
 
         String urlOfpage = " ";
         email.sendKeys(" ");
-        password.sendKeys("Keelagh46=");
+        password.sendKeys(PASSWORD);
         loginButton.click();
         urlOfpage = driver.getCurrentUrl();
         return urlOfpage;
@@ -73,7 +77,7 @@ public class LoginPage {
     public String missingPasswordLogin(){
 
         String urlOfpage = " ";
-        email.sendKeys("jamestate11@gmail.com");
+        email.sendKeys(EMAIL);
         password.sendKeys(" ");
 
         loginButton.click();

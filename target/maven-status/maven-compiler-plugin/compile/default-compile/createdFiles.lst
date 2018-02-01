@@ -1,2 +1,4 @@
-WrongPageException.class
 LoginPage.class
+NavBarComponent.class
+ShotsComponent.class
+WrongPageException.class
