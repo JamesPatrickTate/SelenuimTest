@@ -34,10 +34,18 @@ public class MessageTest {
      * check shots componet is displayed on screen wit correct club value
      */
     @Test
-    public void clubValueTest() {
+    public void countMessagesTest() {
 
         messageComponent = new MessageComponent(driver);
         int messages= messageComponent.countMesages();
         assertTrue(messages > 0);
+    }
+
+    @Test
+    public void newMessageTest() {
+
+        messageComponent = new MessageComponent(driver);
+        boolean hasMessage= messageComponent.newMessage();
+        assertTrue(hasMessage);
     }
 }
