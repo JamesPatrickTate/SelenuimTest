@@ -21,7 +21,7 @@ public class StatsTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        expectedAverage = "5.33";
+        expectedAverage = "4.43";
         expectedFUll    = "5.83";
     }
     @After

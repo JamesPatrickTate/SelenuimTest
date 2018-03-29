@@ -15,7 +15,7 @@ public class MessageComponent {
     private WebDriver driver;
     private List<WebElement> messageCount, messageTimeStamp;
     private WebElement chatButton, chatInput;
-    private List<String> timeStamps;
+    private List<String> timeStamps = new ArrayList<String>();
     private String currentTimeStamp;
 
     public MessageComponent(WebDriver driver) {
@@ -51,11 +51,11 @@ public class MessageComponent {
         chatInput.sendKeys("Selenuim Message");
         chatButton.click();
         currentTimeStamp = todaysDate();
-        //get timestamps from each meassage and check for
-        //our time stamp
+        //check hour and minutes match
         messageTimeStamp = driver.findElements(By.className("timestamp"));
         timeStamps = getTextFromList(messageTimeStamp);
-        return timeStamps.contains(currentTimeStamp);
+        String newMessageTimeandDate = timeStamps.get(timeStamps.size() - 1).substring(5);
+        return currentTimeStamp.contains(newMessageTimeandDate);
     }
 
     /**
@@ -81,7 +81,7 @@ public class MessageComponent {
     }
 
     /**
-     * get teh string values from a list of web elements
+     * get the string values from a list of web elements
      * @param webElements
      * @return
      */

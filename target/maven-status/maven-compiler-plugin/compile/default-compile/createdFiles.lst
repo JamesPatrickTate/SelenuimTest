@@ -1,4 +1,6 @@
 LoginPage.class
 NavBarComponent.class
+MessageComponent.class
 ShotsComponent.class
+StatsComponent.class
 WrongPageException.class

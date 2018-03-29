@@ -19,9 +19,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by ONUR BASKIRT on 26.08.2015.
- */
+
 public class LoginTest {
     private WebDriver driver;
     public LoginPage loginPage ;

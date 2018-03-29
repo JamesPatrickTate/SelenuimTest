@@ -19,7 +19,7 @@ public class ShotsTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        expectedClubValue = "Club: 6I";
+        expectedClubValue = "Club and swing length: 6I & Full";
     }
     @After
     public void tearDown() throws Exception {
@@ -27,7 +27,7 @@ public class ShotsTest {
     }
 
     /**
-     * check shots componet is displayed on screen wit correct club value
+     * check shots componet is displayed on screen with correct club value
      */
     @Test
     public void clubValueTest() {
